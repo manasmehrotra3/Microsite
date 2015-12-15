@@ -1,0 +1,38 @@
+<section data-ng-controller="ActionController" data-ng-init="find()" style="margin-top: 120px;">
+    <div id="sidebar-wrapper" class="col-md-2 colsm-1">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a style="color: #fff;">
+                    Action Items
+                </a>
+            </li>
+            <li>
+                <a href="#!/action">Pending Items</a>
+            </li>
+            <li>
+                <a href="#" class="active">My Items</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-10 col-sm-10 col-md-offset-2 col-sm-offset-1 no-padding-right">
+            <h1>All Open Items</h1>
+            <hr />
+
+            <div class="list-group">
+                <a data-ng-repeat="item in items" data-ng-href="#!/action/{{item._id}}" class="list-group-item">
+                    <small class="list-group-item-text">
+                        Scheduled on
+                        <span data-ng-bind="item.scheduled | date:'mediumDate'"></span>
+                        by
+                        <span data-ng-bind="item.user.displayName"></span>
+                    </small>
+                    <h4 class="list-group-item-heading" data-ng-bind="item.title"></h4>
+                    <p class="list-group-item-text" data-ng-bind="item.content"></p>
+                </a>
+            </div>
+            <div class="alert alert-warning text-center" data-ng-if="items.$resolved && !items.length">
+                No pending ideas yet. Please check later.
+            </div>
+    </div>
+</section>

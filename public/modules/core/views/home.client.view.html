@@ -1,0 +1,104 @@
+<section data-ng-controller="HomeController" style="margin-top: 120px;">
+    <div style="margin-left:-15px;margin-right:-15px;"> 
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto; width: 100%; height: 300px;">
+              <div class="carousel-caption">
+                <h4>{{slide.text}}</h4>
+              </div>
+            </slide>
+        </carousel>
+    </div>
+	<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1 main-container no-padding">
+        <div class="row no-margin-left no-margin-right text-center">
+            <p class="sub-hdr"></p>
+        </div>
+        <div class="row  home-grids-cntr">
+            <div class="row no-margin-right no-margin-left">
+                <div class="col-md-3 col-sm-3" ng-click="overview()">
+                    <div class="home-grid">
+                        <div class="grid-icon">
+                            <img src="modules/core/img/images/icons/overview_icon.png">
+                        </div>
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Overview.jpg">
+                        <p class="home-grid-hdr">Overview</p>
+                        <p>Accenture Delivery Council Overview</p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-sm-3" ng-click="meeting()">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Digital.jpg">
+                        <p class="home-grid-hdr">Meetings</p>
+                        <p>Meetup Summary</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/digital_icon.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" ng-click="action()">
+                    <div class="home-grid app-servives-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/App%20Services.jpg">
+                        <p class="home-grid-hdr">Action Items</p>
+                        <p>Pending Action Items</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/application_services_icon.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" ng-click="blog()">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Delivery%20Methods.jpg">
+                        <p class="home-grid-hdr">Blogs</p>
+                        <p>Create new threads or blogs</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/delivery_method_icon.png">
+                    </div>
+                </div>                
+            </div>
+            <div class="row no-margin-right no-margin-left" data-ng-show="authentication.user.roles.indexOf('admin')!=-1">
+                <div class="col-md-3 col-sm-3" ng-click="manageMeeting()">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Innovation.jpg">
+                        <p class="home-grid-hdr">Manage Meeting</p>
+                        <p>Add, remove and update meetings</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/innovation_icon.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3" ng-click="manageActionItem()">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Asset%20Showcase.jpg">
+                        <p class="home-grid-hdr">Manage Action Item</p>
+                        <p>Add or update action items</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/assetshowcase_icon.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Knowledge%20Management.jpg">
+                        <p class="home-grid-hdr">Manage Blogs</p>
+                        <p>Handle pending blog requests</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/km_icon.png">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="home-grid">
+                        <img class="img-stretch img-responsive" src="modules/core/img/images/home/Project%20Showcase.jpg">
+                        <p class="home-grid-hdr">Initiate Video Conference</p>
+                        <p>Admin can add new action items</p>
+                    </div>
+                    <div class="grid-icon">
+                        <img src="modules/core/img/images/icons/project_showcase_icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
