@@ -2,7 +2,7 @@
 
 module.exports = {
 	db: {
-		uri: 'mongodb://localhost/microsite-dev',
+		uri: process.env.MONGOLAB_URI || 'mongodb://localhost/microsite-dev',
 		options: {
 			user: '',
 			pass: ''
