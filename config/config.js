@@ -1,5 +1,12 @@
 'use strict';
 
+if (process.env.VCAP_SERVICES) {
+var vcap = JSON.parse(process.env.VCAP_SERVICES);
+console.log(vcap.mongolab);
+process.env.MONGOLAB_URI = vcap.mongolab[0].credentials.uri;
+process.env.NODE_ENV = 'development';
+}
+
 /**
  * Module dependencies.
  */
@@ -89,8 +96,4 @@ module.exports.getCSSAssets = function() {
 	return output;
 };
 
-if (process.env.VCAP_SERVICES) {
-var vcap = JSON.parse(process.env.VCAP_SERVICES);
-process.env.MONGOLAB_URI = vcap.mongolab[0].credentials.uri;
-process.env.NODE_ENV = 'development';
-}
+
